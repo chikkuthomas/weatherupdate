@@ -173,10 +173,16 @@
                 <p class="mt-2" id="result2"></p>
             </div>
 
-            <div class="coll mx-auto l ">
+<!--             <div class="coll mx-auto l ">
                 <i class="fas mt-2   mb-2  fa-2x fa-cloud" style="color: rgb(66, 245, 245);"></i> <br>
                 <small>Weather</small> 
                 <p class="mt-2" id="result3"></p>
+            </div> -->
+            
+            <div class="coll mx-auto l ">
+                <div id="result3"></div>
+                <small>Weather</small> 
+                <p id="desc"></p>
             </div>
             <div class="coll  mx-auto ">
                 <i class="fas mt-3   mb-2   fa-wind" style="color: rgb(65, 4, 94);"></i>  <br>
@@ -202,12 +208,18 @@
         let humidity = city.list[0].main.humidity
         let weather = city.list[0].weather[0].main
         let wind_speed = city.list[0].wind.speed
+        let iconcode = city.list[0].weather[0].icon;
+        let des=city.list[0].weather[0].description
+        let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+       
 
         console.log(name, temp, humidity, weather, wind_speed);
+        let html_data=` <img src="${iconurl}" alt="" width="80px" height="60px">`
+        desc.innerHTML=des
         result.innerHTML=name
         result1.innerHTML=`${temp}°C`
         result2.innerHTML=`${humidity}% `
-        result3.innerHTML=weather
+        result3.innerHTML=html_data
         result4.innerHTML=`${wind_speed}m/s `
 
     }
