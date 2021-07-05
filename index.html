@@ -19,12 +19,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 
-    /* font-family: 'Qahiri', sans-serif; */
-    /* font-family: 'Staatliches', cursive; */
-    /* font-family: 'Handlee', cursive; */
-    /* font-family: 'Sacramento', cursive; */
-    /* font-family: 'Pacifico', cursive; */
-    /* font-family: 'Concert One', cursive; */
+   
     body {
         background: linear-gradient(to right, #fce6b6, #fcd690);
     }
@@ -126,7 +121,7 @@
             width: 100%;
              margin-left: 0px; 
              padding: 5px;
-            /* margin-right: 10px; */ 
+         
         }
         .coll{
             width:35%;
@@ -141,7 +136,7 @@
         }
         .footer{
         margin-top:80px;
-        /* margin-left:35% ; */
+       
     }
 
     }
@@ -214,7 +209,7 @@
 
 
     }
-    //26°С temperature from 26 to 26 °С, wind 1.03 m/s. clouds 75 %, 1008 hpa//
+   
 
     function fetchWeather() {
         let city_name = city.value
@@ -222,18 +217,16 @@
         let url = `https://api.openweathermap.org/data/2.5/find?q=${city_name}&units=metric&appid=${api}`;
 
         fetch(url).then(res => {
-            if (!(res.ok)) { // if response failed
-                throw new Error("failed to fetch data") // throw error message
+            if (!(res.ok)) { 
+                throw new Error("failed to fetch data") 
             }
             else {
-                return res.json() // if success response converted to json
+                return res.json() 
             }
         }).then(data => displayValues(data)).catch(error => alert(error.message))
-        // fetch by default use "get" method =>then=promise, if success=>response changed to json
-        // which is then called data => displayed in html page
+       
     }
-//  country data//
-// weather data //
+
 
 </script>
 
