@@ -222,7 +222,7 @@
 
         fetch(url).then(res => {
             if (!(res.ok)) { 
-                throw new Error("failed to fetch data") 
+                throw new Error("Invalid City Name") 
             }
             else {
                 return res.json() 
@@ -230,6 +230,10 @@
         }).then(data => displayValues(data)).catch(error => swal("failed", `${error.message}`, "error"))
        
     }
+      else
+         {
+             alert("Please Enter City Name");
+       }
 
 
 </script>
