@@ -237,7 +237,7 @@
             else {
                 return res.json() 
             }
-        }).then(data => displayValues(data)).catch(error =>swal("failed", `${error.message}`, "error"))
+        }).then(data => displayValues(data)).catch(error => alert(error.message))
        
     }
       
